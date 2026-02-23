@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "title": "Jornada de Voluntariado Ambiental",
+    "subtitle": "Cuidando nuestro entorno",
+    "description": "Nuestros voluntarios se reunieron para limpiar áreas verdes de la comunidad.",
+    "fullText": "La actividad reunió a más de 40 voluntarios que participaron en limpieza, reforestación y educación ambiental...",
+    "image": "https://i.imgur.com/1CZUi5w.png"
+  },
+  {
+    "id": 2,
+    "title": "Actividad con Adultos Mayores",
+    "subtitle": "Compartiendo momentos especiales",
+    "description": "Un día lleno de juegos, música y conversación con la tercera edad.",
+    "fullText": "Los voluntarios pasaron una tarde llena de actividades recreativas, fortaleciendo vínculos intergeneracionales...",
+    "image": "https://i.imgur.com/qwTnEsR.png"
+  }
+]

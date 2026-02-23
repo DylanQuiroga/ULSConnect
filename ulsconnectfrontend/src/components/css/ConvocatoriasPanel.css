@@ -1,0 +1,665 @@
+/* layout */
+.cv-container {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 24px;
+    padding: 24px 6%;
+    max-width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    background-color: white;
+    color: var(--text-900);
+}
+
+/* sidebar */
+.cv-sidebar {
+    background: white;
+    border: 1px solid var(--bg-border);
+    padding: 18px;
+    border-radius: 10px;
+    box-shadow: 0 14px 40px var(--shadow-blue-1);
+}
+
+.cv-sidebar h3 {
+    margin: 0 0 12px 0;
+    font-size: 1.05rem;
+    color: var(--blue-700);
+}
+
+.cv-label {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-700);
+    margin-bottom: 10px;
+}
+
+.cv-input {
+    width: 100%;
+    padding: 9px 10px;
+    border-radius: 8px;
+    border: 1px solid var(--bg-border);
+    background: var(--input-bg);
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
+}
+
+.cv-input:focus {
+    outline: none;
+    border-color: var(--blue-600);
+}
+
+/* checkbox list */
+.cv-check {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin: 6px 0;
+    font-size: 0.95rem;
+    color: var(--text-700);
+}
+
+.cv-check input[type="checkbox"]:checked {
+    accent-color: var(--pink-600);
+}
+
+.cv-apply {
+    margin-top: 12px;
+    width: 100%;
+    background: linear-gradient(135deg, var(--pink-600), var(--pink-400));
+    color: #fff;
+    border: none;
+    padding: 10px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(254, 105, 112, 0.3);
+    transition: all 0.3s ease;
+}
+
+.cv-apply:hover {
+    background: linear-gradient(135deg, var(--blue-700), var(--blue-600));
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(1, 96, 180, 0.4);
+}
+
+/* main */
+.cv-main {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.cv-hero h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--text-900);
+}
+
+.cv-sub {
+    margin: 6px 0 0;
+    color: var(--text-700);
+}
+
+/* grid of cards: 2 columnas en desktop, 1 en móvil */
+.cv-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    align-items: start;
+}
+
+/* single card: sin imagen, más compacto */
+.cv-card {
+    background: white;
+    border-radius: 12px;
+    border: 1px solid var(--bg-border);
+    box-shadow: 0 8px 24px var(--shadow-blue-1);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+    min-height: 240px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cv-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px var(--shadow-blue-2);
+}
+
+.cv-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+
+.cv-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    background: linear-gradient(135deg, rgba(254, 105, 112, 0.1), rgba(1, 96, 180, 0.08));
+    color: var(--blue-700);
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    align-self: flex-start;
+    border: 1px solid rgba(1, 96, 180, 0.12);
+}
+
+.cv-title {
+    margin: 4px 0 0;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--text-900);
+}
+
+.cv-excerpt {
+    margin: 4px 0 0;
+    color: var(--text-700);
+    font-size: 0.95rem;
+    flex: 1;
+    line-height: 1.5;
+}
+
+/* meta */
+.cv-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: var(--text-700);
+    font-size: 0.9rem;
+    margin-top: 8px;
+}
+
+.cv-meta-item {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    color: var(--text-700);
+}
+
+.cv-meta-item svg {
+    color: var(--blue-600);
+}
+
+/* actions */
+.cv-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+    align-items: center;
+}
+
+.cv-btn {
+    padding: 9px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    border: 1px solid transparent;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.cv-btn-ghost {
+    background: transparent;
+    color: var(--blue-700);
+    border: 1px solid rgba(1, 96, 180, 0.2);
+}
+
+.cv-btn-ghost:hover {
+    background: rgba(1, 96, 180, 0.08);
+    border-color: var(--blue-600);
+    transform: translateY(-2px);
+}
+
+.cv-btn-primary {
+    background: linear-gradient(135deg, var(--pink-600), var(--pink-400));
+    color: #fff;
+    border: none;
+    box-shadow: 0 2px 8px rgba(254, 105, 112, 0.3);
+}
+
+.cv-btn-primary:hover {
+    background: linear-gradient(135deg, var(--blue-700), var(--blue-600));
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(1, 96, 180, 0.4);
+}
+
+/* pagination */
+.cv-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 24px;
+    padding: 12px 0;
+}
+
+.cv-page-btn {
+    background: white;
+    border: 1px solid var(--bg-border);
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 1.1rem;
+    color: var(--text-700);
+    min-width: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cv-page-btn:hover:not(:disabled) {
+    border-color: var(--blue-600);
+    background: rgba(1, 96, 180, 0.05);
+    color: var(--blue-700);
+}
+
+.cv-page-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.cv-pages {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.cv-page {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--bg-border);
+    background: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-700);
+    min-width: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cv-page:hover {
+    border-color: var(--pink-600);
+    background: rgba(254, 105, 112, 0.08);
+    color: var(--pink-600);
+}
+
+.cv-page.active {
+    background: linear-gradient(135deg, var(--pink-600), var(--pink-400));
+    color: white;
+    border: none;
+    box-shadow: 0 2px 8px rgba(254, 105, 112, 0.3);
+}
+
+.cv-ellipsis {
+    color: var(--text-700);
+    padding: 0 4px;
+    font-weight: 600;
+}
+
+/* Estilos personalizados para react-calendar */
+.cv-calendar-widget {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    font-family: inherit;
+    box-shadow: none;
+    background: white;
+    padding: 8px;
+}
+
+/* Navegación superior (mes/año y flechas) */
+.cv-calendar-widget .react-calendar__navigation {
+    display: flex;
+    height: 44px;
+    margin-bottom: 8px;
+    gap: 4px;
+}
+
+.cv-calendar-widget .react-calendar__navigation button {
+    min-width: 32px;
+    background: none;
+    font-size: 0.85rem;
+    color: var(--text-900);
+    font-weight: 700;
+    border: none;
+    border-radius: 6px;
+    padding: 4px;
+}
+
+/* Botón del label (mes y año) más angosto */
+.cv-calendar-widget .react-calendar__navigation__label {
+    flex-grow: 1 !important;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 140px;
+}
+
+.cv-calendar-widget .react-calendar__navigation__arrow {
+    flex-grow: 0 !important;
+    flex-shrink: 0;
+}
+
+.cv-calendar-widget .react-calendar__navigation button:enabled:hover,
+.cv-calendar-widget .react-calendar__navigation button:enabled:focus {
+    background: rgba(1, 96, 180, 0.08);
+}
+
+.cv-calendar-widget .react-calendar__navigation button:disabled {
+    opacity: 0.4;
+}
+
+/* Nombres de días de la semana */
+.cv-calendar-widget .react-calendar__month-view__weekdays {
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-700);
+    text-transform: uppercase;
+}
+
+.cv-calendar-widget .react-calendar__month-view__weekdays__weekday {
+    padding: 8px 0;
+}
+
+.cv-calendar-widget .react-calendar__month-view__weekdays__weekday abbr {
+    text-decoration: none;
+}
+
+/* Tiles (días) */
+.cv-calendar-widget .react-calendar__tile {
+    padding: 10px 6px;
+    font-size: 0.9rem;
+    color: var(--text-900);
+    background: none;
+    border: none;
+    border-radius: 8px;
+    position: relative;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.cv-calendar-widget .react-calendar__tile:enabled:hover,
+.cv-calendar-widget .react-calendar__tile:enabled:focus {
+    background: rgba(1, 96, 180, 0.12);
+}
+
+/* Día actual (hoy) */
+.cv-calendar-widget .react-calendar__tile--now {
+    background: rgba(1, 96, 180, 0.15);
+    font-weight: 700;
+}
+
+.cv-calendar-widget .react-calendar__tile--now:enabled:hover {
+    background: rgba(1, 96, 180, 0.22);
+}
+
+/* Día seleccionado (activo) */
+.cv-calendar-widget .react-calendar__tile--active {
+    background: linear-gradient(135deg, var(--pink-600), var(--pink-400)) !important;
+    color: white !important;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(254, 105, 112, 0.3);
+}
+
+.cv-calendar-widget .react-calendar__tile--active:enabled:hover {
+    background: linear-gradient(135deg, var(--blue-700), var(--blue-600)) !important;
+}
+
+/* Días de otros meses (fuera del mes actual) */
+.cv-calendar-widget .react-calendar__month-view__days__day--neighboringMonth {
+    color: #ccc;
+}
+
+/* Vista de mes */
+.cv-calendar-widget .react-calendar__month-view__days {
+    display: grid !important;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+}
+
+/* Ajuste de sección */
+.cv-section {
+    margin-bottom: 18px;
+}
+
+.cv-section-title {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--blue-700);
+    margin-bottom: 10px;
+}
+
+/* ✅ Botón limpiar fecha */
+.cv-clear-date {
+    width: 100%;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fca5a5;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.cv-clear-date:hover {
+    background: #fecaca;
+    border-color: #f87171;
+}
+
+/* ✅ Botón en empty state */
+.cv-empty {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, rgba(1, 96, 180, 0.03), rgba(254, 105, 112, 0.02));
+    border-radius: 16px;
+    border: 2px dashed rgba(1, 96, 180, 0.2);
+}
+
+.cv-empty p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.cv-empty .cv-btn {
+    margin-top: 16px;
+}
+
+/* ✅ Badge de inscrito */
+.cv-enrolled-badge {
+    position: absolute;
+    top: -12px;
+    left: 16px;
+    background: linear-gradient(135deg, #10b981, #34d399);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
+    z-index: 10;
+}
+
+/* ✅ Badge de cerrada */
+.cv-closed-badge {
+    position: absolute;
+    top: -12px;
+    right: 16px;
+    background: linear-gradient(135deg, #ef4444, #f87171);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.4);
+    z-index: 10;
+}
+
+/* ✅ Tarjeta inscrita */
+.cv-card-enrolled {
+    border: 2px solid #10b981;
+    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.15);
+}
+
+/* ✅ Tarjeta cerrada */
+.cv-card-closed {
+    opacity: 0.7;
+    border: 2px solid #ef4444;
+}
+
+.cv-card-closed .cv-btn-primary {
+    background: #9ca3af;
+    cursor: not-allowed;
+}
+
+.cv-card-closed .cv-btn-primary:hover {
+    background: #9ca3af;
+    box-shadow: none;
+}
+
+/* ============== LOADING SKELETON ============== */
+.cv-loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    gap: 20px;
+}
+
+.cv-loading-spinner {
+    width: 48px;
+    height: 48px;
+    border: 4px solid var(--muted-300, #ddd);
+    border-top-color: var(--blue-700, #0160b4);
+    border-radius: 50%;
+    animation: cv-spin 0.8s linear infinite;
+}
+
+@keyframes cv-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.cv-loading-container p {
+    color: var(--text-700, #333);
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Skeleton elements */
+.cv-skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: cv-shimmer 1.5s infinite;
+    border-radius: 8px;
+}
+
+@keyframes cv-shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+.cv-skeleton-input {
+    height: 40px;
+    margin-bottom: 16px;
+}
+
+.cv-skeleton-calendar {
+    height: 200px;
+    margin-bottom: 16px;
+}
+
+.cv-skeleton-checks {
+    height: 100px;
+}
+
+.cv-grid-skeleton {
+    opacity: 0.6;
+}
+
+.cv-card-skeleton {
+    background: white;
+    border: 1px solid var(--bg-border, #f5f6fa);
+    border-radius: 14px;
+    padding: 20px;
+    min-height: 200px;
+}
+
+.cv-skeleton-badge {
+    width: 100px;
+    height: 24px;
+    margin-bottom: 12px;
+}
+
+.cv-skeleton-title {
+    width: 80%;
+    height: 24px;
+    margin-bottom: 12px;
+}
+
+.cv-skeleton-text {
+    width: 100%;
+    height: 16px;
+    margin-bottom: 8px;
+}
+
+.cv-skeleton-text.short {
+    width: 60%;
+}
+
+.cv-skeleton-meta {
+    width: 70%;
+    height: 20px;
+    margin-top: 16px;
+}
+
+/* responsive */
+@media (max-width: 1100px) {
+    .cv-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cv-container {
+        grid-template-columns: 220px 1fr;
+    }
+}
+
+@media (max-width: 780px) {
+    .cv-container {
+        grid-template-columns: 1fr;
+        padding: 18px 4%;
+    }
+
+    .cv-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cv-sidebar {
+        order: 2;
+    }
+}

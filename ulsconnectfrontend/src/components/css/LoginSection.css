@@ -1,0 +1,263 @@
+.login-section {
+  position: static;
+  width: 100%;
+  height: 100vh;
+  background-image: url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+}
+
+.login-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--overlay-dark);
+  /* mismo overlay que register */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.login-content {
+  position: absolute;
+  background: var(--content-glass);
+  /* mismo glass effect */
+  backdrop-filter: blur(6px);
+  padding: 50px;
+  border-radius: 16px;
+  color: var(--text-900);
+  text-align: center;
+  width: 100%;
+  max-width: 420px;
+  z-index: 2;
+  box-shadow: 0 4px 20px var(--shadow);
+}
+
+.login-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.login-subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: var(--muted-200);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.login-form input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(15, 23, 32, 0.06);
+  outline: none;
+  font-size: 1rem;
+  background: var(--input-bg);
+  color: var(--text-700);
+  transition:
+    box-shadow 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.login-form input:focus {
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.12);
+  border-color: var(--primary);
+}
+
+.login__btn {
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  padding: 14px 18px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    transform 0.08s ease;
+  width: 100%;
+}
+
+.login__btn:hover {
+  background: var(--blue-600);
+  transform: translateY(-1px);
+}
+
+.login__btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.login-error {
+  margin-top: 12px;
+  padding: 12px;
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.login-register {
+  margin-top: 18px;
+  font-size: 0.95rem;
+  color: white;
+}
+
+.login-register a {
+  color: var(--pink-600);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.login-register a:hover {
+  text-decoration: underline;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .login-section {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .login-overlay {
+    padding: 20px 16px;
+    align-items: flex-start;
+    padding-top: 60px;
+  }
+
+  .login-content {
+    position: relative;
+    padding: 32px 24px;
+    max-width: 100%;
+    margin: 0 auto;
+    border-radius: 12px;
+  }
+
+  .login-title {
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+  }
+
+  .login-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+  }
+
+  .login-form {
+    gap: 14px;
+  }
+
+  .login-form input {
+    padding: 14px 12px;
+    font-size: 16px;
+    /* Previene zoom en iOS */
+    border-radius: 10px;
+  }
+
+  .login__btn {
+    padding: 14px 16px;
+    font-size: 1rem;
+    border-radius: 10px;
+    margin-top: 4px;
+  }
+
+  .login-error {
+    margin-top: 8px;
+    padding: 10px;
+    font-size: 0.85rem;
+    border-radius: 8px;
+  }
+
+  .login-register {
+    margin-top: 20px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-overlay {
+    padding: 16px 12px;
+    padding-top: 40px;
+  }
+
+  .login-content {
+    padding: 28px 20px;
+    border-radius: 10px;
+  }
+
+  .login-title {
+    font-size: 1.4rem;
+  }
+
+  .login-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+
+  .login-form {
+    gap: 12px;
+  }
+
+  .login-form input {
+    padding: 12px 10px;
+    border-radius: 8px;
+  }
+
+  .login__btn {
+    padding: 12px 14px;
+    font-size: 0.95rem;
+    border-radius: 8px;
+  }
+
+  .login-error {
+    padding: 8px;
+    font-size: 0.8rem;
+  }
+
+  .login-register {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .login-overlay {
+    padding: 12px 10px;
+    padding-top: 30px;
+  }
+
+  .login-content {
+    padding: 24px 16px;
+  }
+
+  .login-title {
+    font-size: 1.3rem;
+  }
+
+  .login-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .login-form input {
+    padding: 11px 10px;
+  }
+
+  .login__btn {
+    padding: 11px 12px;
+    font-size: 0.9rem;
+  }
+}

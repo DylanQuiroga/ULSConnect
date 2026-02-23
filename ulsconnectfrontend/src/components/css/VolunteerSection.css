@@ -1,0 +1,514 @@
+.volunteer-dashboard {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 24px;
+  background: #f5f6fa;
+  min-height: 100vh;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+}
+
+.volunteer-dashboard.loading,
+.volunteer-dashboard .error {
+  text-align: center;
+  padding: 80px 20px;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* Dashboard Title */
+.dashboard-title {
+  font-size: 2.2rem;
+  font-weight: 900;
+  margin-bottom: 40px;
+  padding: 24px 32px;
+  background: linear-gradient(135deg, #ffffff, #ffffff);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(1, 96, 180, 0.08);
+  border: 1px solid rgba(1, 96, 180, 0.06);
+  background: linear-gradient(90deg, #0160b4 0%, #fe6970 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Dashboard Stats - Tarjetas de Resumen */
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, #ffffff 0%, #fafbfd 100%);
+  padding: 28px 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(1, 96, 180, 0.08);
+  border: 1px solid rgba(1, 96, 180, 0.06);
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #0160b4 0%, #fe6970 100%);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(1, 96, 180, 0.15);
+}
+
+.stat-card:hover::before {
+  transform: scaleX(1);
+}
+
+.stat-card p {
+  margin: 0 0 16px 0;
+  font-size: 0.85rem;
+  color: #666;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.stat-card h2 {
+  margin: 0;
+  font-size: 3rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #0160b4 0%, #0373d1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Dashboard Sections */
+.dashboard-section {
+  margin-bottom: 48px;
+  padding: 32px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(1, 96, 180, 0.08);
+  border: 1px solid rgba(1, 96, 180, 0.06);
+}
+
+.dashboard-section h2 {
+  margin: 0 0 28px 0;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #0160b4;
+  padding-bottom: 12px;
+  border-bottom: 3px solid #fe6970;
+}
+
+/* Initiative List */
+.initiative-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.initiative-list>p {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #666;
+  font-size: 1rem;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, rgba(1, 96, 180, 0.03), rgba(254, 105, 112, 0.02));
+  border-radius: 12px;
+  border: 2px dashed rgba(1, 96, 180, 0.2);
+}
+
+/* Initiative Card */
+.initiative-card {
+  background: linear-gradient(135deg, #ffffff 0%, #fafbfd 100%);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(1, 96, 180, 0.08);
+  border: 1px solid rgba(1, 96, 180, 0.06);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.initiative-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #fe6970 0%, #ff8a8f 100%);
+}
+
+.initiative-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(1, 96, 180, 0.15);
+}
+
+.initiative-card h3 {
+  margin: 0 0 16px 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0160b4;
+  line-height: 1.4;
+}
+
+.initiative-card p {
+  margin: 8px 0;
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.initiative-card strong {
+  color: #333;
+  font-weight: 700;
+}
+
+/* Activity Table */
+.activity-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 20px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(1, 96, 180, 0.06);
+}
+
+.activity-table thead {
+  background: linear-gradient(90deg, #0160b4 0%, #0373d1 100%);
+}
+
+.activity-table th {
+  padding: 16px 14px;
+  text-align: left;
+  font-weight: 700;
+  color: white;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.activity-table tbody {
+  background: white;
+}
+
+.activity-table td {
+  padding: 14px;
+  border-bottom: 1px solid rgba(1, 96, 180, 0.08);
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.activity-table tbody tr {
+  transition: all 0.2s ease;
+}
+
+.activity-table tbody tr:hover {
+  background: linear-gradient(90deg, rgba(1, 96, 180, 0.04), rgba(254, 105, 112, 0.02));
+  transform: scale(1.01);
+}
+
+.activity-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Buttons */
+.btn-green {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #fe6970 0%, #ff8a8f 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(254, 105, 112, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-green:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(254, 105, 112, 0.4);
+  background: linear-gradient(135deg, #0160b4 0%, #0373d1 100%);
+}
+
+.btn-green:active {
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .dashboard-title {
+    font-size: 1.8rem;
+    padding: 20px 24px;
+  }
+
+  .dashboard-stats {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+  }
+
+  .initiative-list {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .volunteer-dashboard {
+    padding: 16px 12px;
+  }
+
+  .dashboard-title {
+    font-size: 1.4rem;
+    padding: 16px;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+
+  .dashboard-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .stat-card {
+    padding: 16px 10px;
+    border-radius: 12px;
+  }
+
+  .stat-card p {
+    font-size: 0.65rem;
+    margin-bottom: 8px;
+    letter-spacing: 0;
+  }
+
+  .stat-card h2 {
+    font-size: 1.6rem;
+  }
+
+  .dashboard-section {
+    padding: 20px 14px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+  }
+
+  .dashboard-section h2 {
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+  }
+
+  .initiative-list {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 16px;
+  }
+
+  .initiative-list>p {
+    padding: 24px 16px;
+    font-size: 0.9rem;
+  }
+
+  .initiative-card {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .initiative-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+  }
+
+  .initiative-card p {
+    font-size: 0.85rem;
+    margin: 6px 0;
+  }
+
+  /* Tabla responsive - Convertir a cards */
+  .activity-table {
+    display: block;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .activity-table thead {
+    display: none;
+  }
+
+  .activity-table tbody {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: transparent;
+  }
+
+  .activity-table tbody tr {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #ffffff 0%, #fafbfd 100%);
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(1, 96, 180, 0.08);
+    border: 1px solid rgba(1, 96, 180, 0.06);
+    gap: 8px;
+  }
+
+  .activity-table tbody tr:hover {
+    transform: none;
+  }
+
+  .activity-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(1, 96, 180, 0.06);
+    font-size: 0.9rem;
+  }
+
+  .activity-table td:last-child {
+    border-bottom: none;
+  }
+
+  .activity-table td::before {
+    content: attr(data-label);
+    font-weight: 700;
+    color: #0160b4;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    flex-shrink: 0;
+    margin-right: 12px;
+  }
+
+  .activity-table td:first-child {
+    font-weight: 600;
+    color: #333;
+    font-size: 1rem;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(254, 105, 112, 0.3);
+  }
+
+  .activity-table td:first-child::before {
+    display: none;
+  }
+
+  .btn-green {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .volunteer-dashboard {
+    padding: 12px 10px;
+  }
+
+  .dashboard-title {
+    font-size: 1.2rem;
+    padding: 14px 12px;
+    margin-bottom: 20px;
+  }
+
+  .dashboard-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .stat-card {
+    padding: 12px 8px;
+    border-radius: 10px;
+    min-width: unset;
+  }
+
+  .stat-card p {
+    font-size: 0.55rem;
+    margin-bottom: 6px;
+    line-height: 1.2;
+  }
+
+  .stat-card h2 {
+    font-size: 1.3rem;
+  }
+
+  .dashboard-section {
+    padding: 16px 12px;
+    border-radius: 10px;
+  }
+
+  .dashboard-section h2 {
+    font-size: 1.1rem;
+  }
+
+  .initiative-card {
+    padding: 14px;
+  }
+
+  .initiative-card h3 {
+    font-size: 1rem;
+  }
+
+  .initiative-card p {
+    font-size: 0.8rem;
+  }
+
+  .activity-table tbody tr {
+    padding: 14px;
+  }
+
+  .activity-table td {
+    font-size: 0.85rem;
+  }
+
+  .activity-table td:first-child {
+    font-size: 0.95rem;
+  }
+
+  .activity-table td::before {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .dashboard-title {
+    font-size: 1.1rem;
+    padding: 12px 10px;
+  }
+
+  .dashboard-stats {
+    gap: 6px;
+  }
+
+  .stat-card {
+    padding: 10px 6px;
+  }
+
+  .stat-card p {
+    font-size: 0.5rem;
+  }
+
+  .stat-card h2 {
+    font-size: 1.1rem;
+  }
+
+  .dashboard-section h2 {
+    font-size: 1rem;
+  }
+}
